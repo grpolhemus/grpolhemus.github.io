@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kev's Onion Farm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <audio id="onion-audio" src="assets/sounds/onion-sound.wav"></audio>
+    <audio id="crops-audio" src="assets/sounds/crops-sound.wav"></audio>
+    <audio id="upgrade-audio" src="assets/sounds/upgrade-sound.wav"></audio>
+    <audio id="coins-audio" src="assets/sounds/coins-sound.wav"></audio>
+    <audio id="small-coins-audio" src="assets/sounds/small-coins-sound.wav"></audio>
+    <audio id="achievement-audio" src="assets/sounds/achievement-sound.wav"></audio>
+
+    <div class="background">
+
+        <div class="game-box">
+            <!-- Left Column Start -->
+            <div class="left column">
+
+                <!-- Top Title Section-->
+                <div class="title-box">
+                    <h1 class="title">Kev's Onion Farm</h1>
+                </div>
+
+
+                <!-- Textbox Section-->
+                <div class="left-top">
+                    <img src="assets/images/Kevin.png" class="profile-img" alt="">
+                    <div class="text-box" id="profile-text-box">
+                        <h3 id="greeting">Howdy!</h3>
+                        <p class="text">Hey, it's me Kev. I sure do love onions. Raw, pickled, fried, you name it. I've been growin' so many onions lately that I need some extra help around the farm. Think you could give me a hand?</p>
+                    </div>
+                </div>
+
+                <!-- Onion Section-->
+                <div class="onion" id="onion">
+                    <img src="assets/images/The Onion.png" class="onion-img" id="onion-img" alt="" onclick="addToScore(); playSmallCoinsAudio(); playOnionSound(); animation(event); clickCounter(); ">
+                    <div class="floating-text" id="floating-text">
+                        <!-- JavaScript Here -->
+                    </div>
+                </div>
+
+                <!-- Counter Section-->
+                <div class="counter-box">
+                    <div class="counter"><span id="onion-counter">0</span>
+                        <!-- JavaScript Here-->
+                    </div>
+                    <span class="subtract-box" id="subtract-box">
+                        <p class="subtract-text" id="subtract-text"><!-- JavaScript Here--></p>
+                    </span>
+
+                    <div class="sub-title">onions</div>
+                    <div class="rate">per second: <span id="rate-value">1.00</span></div>
+                </div>
+                <div class="mobile-nav">
+
+                    <button class="arrow-left">
+                    </button>
+                    <button class="arrow-right" onclick="middleTab();">
+                        &#9658;<p>Next</p>
+                    </button>
+                </div>
+
+            </div>
+            <!-- End of Left Column -->
+
+            <!-- Middle Column -->
+            <div class="middle column">
+
+                <!-- Top Title Section-->
+                <div class="title-box">
+                    <h2 class="title">Information</h2>
+                </div>
+                <div class="scroll">
+                    <!-- Textbox Section-->
+                    <div class="middle-top">
+                        <div class="text-box">
+                            <h3 id="instructions">Instructions</h3>
+                            <p class="text"> Welcome to Kev's Onion Farm. Click on the onion to start harvesting. Improve your onion farm with the investments tab to the right. Or just tab out and enjoy watching those onions collect. </p>
+                        </div>
+                    </div>
+
+                    <div class="text-box flex">
+                        <h3 id="instructions">Achievements</h3>
+                        <p class="scroll-text">Scroll &#9660</p>
+                    </div>
+
+                    <!-- Achievements Section-->
+                    <div class="achievement-box">
+
+                        <div class="achievement" id="achievement-1">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-2">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-3">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-4">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-5">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-6">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                            <p class="achievement-tagline-stats"> <span id="clickCount">0</span>/ 1000 </p>
+                        </div>
+
+                        <div class="achievement" id="achievement-7">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-8">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+
+                        <div class="achievement" id="achievement-9">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                            <p class="achievement-tagline-stats"> <span id="scoreSpent">0</span> / 500,000</p>
+                        </div>
+
+                        <div class="achievement" id="achievement-10">
+                            <div class="achievement-header">
+                                <h3 class="achievement-title"></h3>
+                            </div>
+                            <p class="achievement-tagline"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-nav">
+                    <button class="arrow-left" onclick="firstTab();"> &#9668; <p>Previous</p></button>
+                    <button class="arrow-right" onclick="lastTab();">&#9658; <p>Next</p></button>
+                </div>
+            </div>
+            <!-- End of Middle Column -->
+
+            <!-- Right Column -->
+            <div class="right column">
+
+                <!-- Top Title Section-->
+                <div class="title-box">
+                    <h2 class="title">Investments</h2>
+                </div>
+
+                <div class="scroll">
+                    <div class="right-top">
+                        <!-- Textbox Section-->
+                        <div class="text-box flex">
+                            <h3 id="upgrades">Upgrades</h3>
+                            <p class="scroll-text" id="scroll-right">Scroll &#9660</p>
+                        </div>
+
+
+                        <!-- Click Upgrade (Tools) Section -->
+                        <div class="clickUpgrade-box">
+
+                            <button class="upgrade-button" id="clickUpgrade1" onclick="buyClickUpgrade1();"><div class="overlay-upgrades" id="clickUpgrade1-overlay"></div><img src="assets/images/Hammer.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade1-tooltip">
+                            <h4 class="upgrade-title">Hammer</h1> 
+                            <ul class="text">
+                                <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade1-value"><!-- JavaScript Here--></span></li>
+                                <li class="upgrade-cost" id="clickUpgrade1-cost"></li>
+                                <li class="upgrade-cost" id="clickUpgrade1-cost-active">Active</li>
+                            </ul>
+                            <p class="tagline"></p>
+                        </div>
+                        </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade1-tooltip-mobile">
+                                <h4 class="upgrade-title">Hammer</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade1-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade1-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade1-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                            <button class="upgrade-button" id="clickUpgrade2" onclick="buyClickUpgrade2();"><div class="overlay-upgrades" id="clickUpgrade2-overlay"></div><img src="assets/images/Watering Can.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade2-tooltip">
+                            <h4 class="upgrade-title">Watering Can</h1>
+                            <ul class="text">
+                                <li>Increas<span class="text-swap">es</span>  onions per click by <span id="clickUpgrade2-value"><!-- JavaScript Here--></span></li>
+                                <li class="upgrade-cost" id="clickUpgrade2-cost"></li>
+                                <li class="upgrade-cost" id="clickUpgrade2-cost-active">Active</li>
+                            </ul>
+                            <p class="tagline"></p> 
+                        </div>
+                    </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade2-tooltip-mobile">
+                                <h4 class="upgrade-title">Watering Can</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade2-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade2-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade2-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+
+                            <button class="upgrade-button" id="clickUpgrade3" onclick="buyClickUpgrade3();"><div class="overlay-upgrades" id="clickUpgrade3-overlay"></div><img src="assets/images/Scythe.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade3-tooltip">
+                            <h4 class="upgrade-title">Scythe</h1>
+                                <ul class="text">
+                                    <li>Increas<span class="text-swap">es</span>  onions per click by <span id="clickUpgrade3-value"><!-- JavaScript Here--></span></li>
+                                    <li class="upgrade-cost" id="clickUpgrade3-cost"></li>
+                                    <li class="upgrade-cost" id="clickUpgrade3-cost-active">Active</li>
+                                </ul>
+                                <p class="tagline"></p> 
+                        </div>
+                        </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade3-tooltip-mobile">
+                                <h4 class="upgrade-title">Scythe</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade3-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade3-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade3-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                            <button class="upgrade-button" id="clickUpgrade4" onclick="buyClickUpgrade4();"><div class="overlay-upgrades" id="clickUpgrade4-overlay"></div><img src="assets/images/Shovel.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade4-tooltip">
+                            <h4 class="upgrade-title">Shovel</h1>
+                                <ul class="text">
+                                    <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade4-value"><!-- JavaScript Here--></span></li>
+                                    <li class="upgrade-cost" id="clickUpgrade4-cost"></li>
+                                    <li class="upgrade-cost" id="clickUpgrade4-cost-active">Active</li>
+                                </ul>
+                                <p class="tagline"></p> 
+                        </div>
+                        </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade4-tooltip-mobile">
+                                <h4 class="upgrade-title">Shovel</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade4-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade4-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade4-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                            <button class="upgrade-button" id="clickUpgrade5" onclick="buyClickUpgrade5();"><div class="overlay-upgrades" id="clickUpgrade5-overlay"></div><img src="assets/images/Hoe.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade5-tooltip">
+                            <h4 class="upgrade-title">Hoe</h1>
+                                <ul class="text">
+                                    <li>Increas<span class="text-swap">es</span>  onions per click by <span id="clickUpgrade5-value"><!-- JavaScript Here--></span></li>
+                                    <li class="upgrade-cost" id="clickUpgrade5-cost"></li>
+                                    <li class="upgrade-cost" id="clickUpgrade5-cost-active">Active</li>
+                                </ul>
+                                <p class="tagline"></p> 
+                        </div>
+                        </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade5-tooltip-mobile">
+                                <h4 class="upgrade-title">Hoe</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade5-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade5-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade5-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                            <button class="upgrade-button" id="clickUpgrade6" onclick="buyClickUpgrade6();"><div class="overlay-upgrades" id="clickUpgrade6-overlay"></div><img src="assets/images/Pick.png" alt="">
+                            <div class="tooltip-box-small" id="clickUpgrade6-tooltip">
+                                <h4 class="upgrade-title">Pickaxe</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span>  onions per click by <span id="clickUpgrade6-value"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade6-cost"></p> </li>
+                                        <li class="upgrade-cost" id="clickUpgrade6-cost-active">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p> 
+                            </div>
+                        </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade6-tooltip-mobile">
+                                <h4 class="upgrade-title">Pickaxe</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade6-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade6-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade6-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                            <button class="upgrade-button" id="clickUpgrade7" onclick="buyClickUpgrade7();"><div class="overlay-upgrades" id="clickUpgrade7-overlay"></div><img src="assets/images/Seed Bag.png" alt="">
+                        <div class="tooltip-box-small" id="clickUpgrade7-tooltip">
+                            <h4 class="upgrade-title">Seed Bag</h1>
+                                <ul class="text">
+                                    <li>Increas<span class="text-swap">es</span>  onions per click by <span id="clickUpgrade7-value"><!-- JavaScript Here--></span></li>
+                                    <li class="upgrade-cost" id="clickUpgrade7-cost"></li>
+                                    <li class="upgrade-cost" id="clickUpgrade7-cost-active">Active</li>
+                                </ul>
+                                <p class="tagline"></p> 
+                        </div>
+                    </button>
+
+                            <div class="tooltip-box-small-mobile" id="clickUpgrade7-tooltip-mobile">
+                                <h4 class="upgrade-title">Seed Bag</h1>
+                                    <ul class="text">
+                                        <li>Increas<span class="text-swap">es</span> onions per click by <span id="clickUpgrade7-value-mobile"><!-- JavaScript Here--></span></li>
+                                        <li class="upgrade-cost" id="clickUpgrade7-cost-mobile"></li>
+                                        <li class="upgrade-cost" id="clickUpgrade7-cost-active-mobile">Active</li>
+                                    </ul>
+                                    <p class="tagline"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End of Click Upgrade (Tools) Section -->
+
+
+
+                    <!-- Passive Upgrade (Crops) Section-->
+                    <div class="passiveUpgrade-container">
+                        <div class="text-box flex">
+                            <h3 id="crops">Crops</h3>
+                        </div>
+
+                        <div class="passiveUpgrade-box" id="passiveUpgrade1-small" onclick="buyPassiveUpgrade1();">
+                            <h4 class="locked">???</h4>
+                            <img src="assets/images/Onion Green.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Green Onion</h4>
+                                <p class="cost"><span id="cost-passiveUpgrade1"> <!-- JavaScript Here ---></span></p>
+                            </div>
+                            <div class="counter-crops" id="counter-passiveUpgrade1">
+                                0
+                                <!-- JavaScript Here-->
+                            </div>
+                            <div class="overlay-crops" id="overlay-passiveUpgrade1"></div>
+                        </div>
+                        <div class="tooltip-box" id="passiveUpgrade1-large">
+                            <img src="assets/images/Onion Green.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Green Onion</h4>
+                                <ul class="text">
+                                    <li>Harvest an additional <span>0.1</span> onions per second.</li>
+                                    <li>Currently <span id="passiveUpgrade1-percentage">0%<!-- JavaScript Here-->
+                                </span>of total passive onion production, or <span id="passiveUpgrade1-rate"></span>per second.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="crops-box-middle-mobile">
+                            <ul class="text">
+                                <li>Harvest an additional <span>0.1</span> onions per second</li>
+                                <li>Currently <span id="passiveUpgrade1-percentage-mobile">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade1-rate-mobile">0 </span> per second.</li>
+                            </ul>
+                        </div>
+                        <div class="passiveUpgrade-box" id="passiveUpgrade2-small" onclick="buyPassiveUpgrade2()">
+                            <h4 class="locked">???</h4>
+                            <img src="assets/images/Onion Red.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Red Onion</h4>
+                                <p class="cost"><span id="cost-passiveUpgrade2"> <!-- JavaScript Here ---></span></p>
+                            </div>
+                            <div class="counter-crops" id="counter-passiveUpgrade2">
+                                0
+                                <!-- JavaScript Here-->
+                            </div>
+                            <div class="overlay-crops" id="overlay-passiveUpgrade2"></div>
+                        </div>
+                        <div class="tooltip-box" id="passiveUpgrade2-large">
+                            <img src="assets/images/Onion Red.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Red Onion</h4>
+                                <ul class="text">
+                                    <li>Harvest an additional <span>0.5</span> onions per second</li>
+                                    <li>Currently <span id="passiveUpgrade2-percentage">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade2-rate">0</span> per second.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="crops-box-middle-mobile">
+                            <ul class="text">
+                                <li>Harvest an additional <span>0.5</span> onions per second</li>
+                                <li>Currently <span id="passiveUpgrade2-percentage-mobile">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade2-rate-mobile">0 </span> per second.</li>
+                            </ul>
+                        </div>
+                        <div class="passiveUpgrade-box" id="passiveUpgrade3-small" onclick="buyPassiveUpgrade3()">
+                            <h4 class="locked">???</h4>
+                            <img src="assets/images/Onion White.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">White Onion</h4>
+                                <p class="cost"><span id="cost-passiveUpgrade3"> <!-- JavaScript Here ---></span></p>
+                            </div>
+                            <div class="counter-crops" id="counter-passiveUpgrade3">
+                                0
+                                <!-- JavaScript Here-->
+                            </div>
+                            <div class="overlay-crops" id="overlay-passiveUpgrade3"></div>
+                        </div>
+                        <div class="tooltip-box" id="passiveUpgrade3-large">
+                            <img src="assets/images/Onion White.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">White Onion</h4>
+                                <ul class="text">
+                                    <li>Harvest an additional <span>1</span> onions per second</li>
+                                    <li>Currently <span id="passiveUpgrade3-percentage">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade3-rate">0</span> per second.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="crops-box-middle-mobile">
+                            <ul class="text">
+                                <li>Harvest an additional <span>1</span> onions per second</li>
+                                <li>Currently <span id="passiveUpgrade3-percentage-mobile">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade3-rate-mobile">0 </span> per second.</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="passiveUpgrade-box" id="passiveUpgrade4-small" onclick="buyPassiveUpgrade4()">
+                            <h4 class="locked">???</h4>
+                            <img src="assets/images/Shallot.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Shallot</h4>
+                                <p class="cost"><span id="cost-passiveUpgrade4"><!-- JavaScript Here ---></span></p>
+                            </div>
+                            <div class="counter-crops" id="counter-passiveUpgrade4">
+                                0
+                                <!-- JavaScript Here-->
+                            </div>
+                            <div class="overlay-crops" id="overlay-passiveUpgrade4"></div>
+                        </div>
+                        <div class="tooltip-box" id="passiveUpgrade4-large">
+                            <img src="assets/images/Shallot.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Shallot</h4>
+                                <ul class="text">
+                                    <li>Harvest an additional <span>3</span> onions per second</li>
+                                    <li>Currently <span id="passiveUpgrade4-percentage">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade4-rate">0 </span> per second.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="crops-box-middle-mobile">
+                            <ul class="text">
+                                <li>Harvest an additional <span>3</span> onions per second</li>
+                                <li>Currently <span id="passiveUpgrade4-percentage-mobile">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade4-rate-mobile">0 </span> per second.</li>
+                            </ul>
+                        </div>
+                        <div class="passiveUpgrade-box" id="passiveUpgrade5-small" onclick="buyPassiveUpgrade5()">
+                            <h4 class="locked">???</h4>
+                            <img src="assets/images/Garlic.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Garlic</h4>
+                                <p class="cost"><span id="cost-passiveUpgrade5"><!-- JavaScript Here ---></span></p>
+                            </div>
+                            <div class="counter-crops" id="counter-passiveUpgrade5">
+                                0
+                                <!-- JavaScript Here-->
+                            </div>
+                            <div class="overlay-crops" id="overlay-passiveUpgrade5"></div>
+                        </div>
+                        <div class="tooltip-box" id="passiveUpgrade5-large">
+                            <img src="assets/images/Garlic.png" class="crop-img" alt="">
+                            <div class="crops-box-middle">
+                                <h4 class="crops-title">Garlic</h4>
+                                <ul class="text">
+                                    <li>Harvest an additional <span>5</span> onions per second</li>
+                                    <li>Currently <span id="passiveUpgrade5-percentage">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade5-rate">0 </span> per second.</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="crops-box-middle-mobile">
+                            <ul class="text">
+                                <li>Harvest an additional <span>5</span> onions per second</li>
+                                <li>Currently <span id="passiveUpgrade5-percentage-mobile">0%<!-- JavaScript Here--></span>of total passive onion production, or <span id="passiveUpgrade5-rate-mobile">0 </span> per second.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End of Scroll-->
+
+                <div class="mobile-nav">
+                    <button class="arrow-left" onclick="middleTab();">&#9668; <p>Previous</p></button>
+                </div>
+            </div>
+            <!-- End of Right Column -->
+        </div>
+        <!-- Game Box End -->
+    </div>
+    <!-- Background End-->
+
+    <!--
+    Fonts: 
+
+    Images: 
+
+    Icons:
+        Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    -->
+
+    <script src="../js/script.js" async defer></script>
+</body>
+
+</html>

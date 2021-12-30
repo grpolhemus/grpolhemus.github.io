@@ -1,0 +1,1351 @@
+/* 
+Colors
+-----------------------
+Backgrounds: 
+    Green: #386641
+    Black: #000000
+    Dark Blue: #1E2D2F
+    Off Black: #1D1D1D
+
+Text: 
+    Bright Green: #88FFB4
+    Bright Red: #FF4646
+
+Border: 
+    Grey: #707070
+
+Fonts
+-----------------------
+    Cursive:    font-family: 'Marck Script', cursive;
+    Source Sans:    font-family: 'Source Sans Pro', sans-serif;
+    Game Text:  font-family: 'Press Start 2P', cursive;
+    Roboto:     font-family: 'Roboto', sans-serif;
+*/
+
+
+/*================================================
+    
+    General Layout
+    Section
+    
+=================================================*/
+
+body {
+    background-image: url("../assets/images/Farm.jpg");
+    background-position: center;
+    margin: 0 auto;
+    color: #fff;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+}
+
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+p,
+li {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li span {
+    font-family: 'Press Start 2P', cursive;
+}
+
+p span {
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1,
+h2 {
+    font-family: 'Marck Script', cursive;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 15px 0px 10px 0px;
+    padding: 0;
+}
+
+.background {
+    display: flex;
+    height: 100vh;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
+/*================================================
+    
+    Columns and Gamebox
+    Section
+    
+=================================================*/
+
+.game-box {
+    background-color: black;
+    border: 1px solid black;
+    display: flex;
+    width: 1500px;
+    margin: auto;
+}
+
+.column {
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 1030px;
+    padding: 0;
+}
+
+.left {
+    background-image: linear-gradient(#1E2D2F, #1E2D2F, black);
+}
+
+.middle {
+    background-image: linear-gradient(#1E2D2F, #1E2D2F, black);
+    overflow: hidden;
+}
+
+.right {
+    position: relative;
+    background-image: linear-gradient(#1E2D2F, #1E2D2F, black);
+}
+
+.left-top {
+    height: 225px;
+    display: flex;
+}
+
+.middle-top {
+    height: 170px;
+}
+
+.right-top {
+    height: 170px;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    margin: 20px 0px 0px 10px;
+}
+
+#greeting {
+    font-family: 'Marck Script', cursive;
+    font-size: 20px;
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    background-color: #1D1D1D;
+    padding: 30px 0px;
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px 0px 15px;
+}
+
+ul.text {
+    width: 80%;
+}
+
+.text {
+    width: 90%;
+}
+
+
+/*================================================
+    
+    Onion Image
+    Section
+    
+=================================================*/
+
+.onion {
+    box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.onion-img {
+    animation: idle 2s linear infinite;
+    height: 400px;
+    width: 400px;
+}
+
+.onion-img:hover {
+    cursor: pointer;
+}
+
+.onion-img:active {
+    animation: pulse 0.1s;
+}
+
+@keyframes idle {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.floating-text {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #ffed89;
+    position: fixed;
+    animation: floating 3s;
+    pointer-events: none;
+}
+
+@keyframes floating {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.counter-box {
+    margin-top: 0px;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.counter {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    color: #ffed89;
+}
+
+.sub-title {
+    font-family: 'Marck Script', cursive;
+    font-size: 80px;
+}
+
+.rate {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+#rate-value {
+    color: #88FFB4;
+}
+
+.subtract-text {
+    opacity: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: #FF4646;
+    position: absolute;
+    z-index: 5;
+    margin-top: -60px;
+    margin-left: 140px;
+}
+
+@keyframes fadingDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
+/*================================================
+    
+    Achievement
+    Section
+    
+=================================================*/
+
+.achievement-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* IE 11 */
+    scrollbar-width: none;
+    /* Firefox 64 */
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+}
+
+.achievement-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement-image {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid white;
+    background-image: url("../../assets/svg/steps.svg");
+    z-index: 2;
+}
+
+.achievement {
+    box-sizing: border-box;
+    margin: 5px 0px;
+    width: 400px;
+    height: 100px;
+    position: static;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    background-color: #0c0c0c;
+    animation: fadeIn 1s;
+    text-align: center;
+}
+
+#achievement-5 {
+    display: none;
+}
+
+#achievement-6,
+#achievement-9 {
+    height: 115px;
+}
+
+#clickCount,
+#scoreSpent {
+    font-family: 'Roboto', sans-serif;
+}
+
+.achievement-title {
+    color: #3b3b3b;
+}
+
+.achievement-tagline,
+.achievement-tagline-stats {
+    color: #4d4d4d;
+    margin-bottom: 15px;
+}
+
+.achievement-tagline-stats {
+    margin-top: -15px;
+}
+
+.achievement-active {
+    border: 1px solid #ffed8962;
+}
+
+.achievement-title-active {
+    color: #ffed89;
+}
+
+.achievement-tagline-active {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+
+/*================================================
+    
+    Click Upgrade
+    Section
+    
+=================================================*/
+
+.tooltip-box-small-mobile {
+    display: none;
+}
+
+.clickUpgrade-box {
+    position: absolute;
+    margin-left: 10px;
+}
+
+.upgrade-button {
+    z-index: 1;
+    margin: 10px 5px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #707070;
+    background-color: #1D1D1D;
+    outline: none;
+}
+
+.upgrade-button:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255, 237, 137, 0.562);
+}
+
+.upgrade-title {
+    margin: 25px 0px 0px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    color: white;
+}
+
+.upgrade-cost {
+    font-family: 'Press Start 2P', cursive;
+    list-style: none;
+    font-size: 12px;
+    color: #88FFB4;
+}
+
+#clickUpgrade1-cost-active,
+#clickUpgrade2-cost-active,
+#clickUpgrade3-cost-active,
+#clickUpgrade4-cost-active,
+#clickUpgrade5-cost-active,
+#clickUpgrade6-cost-active,
+#clickUpgrade7-cost-active {
+    display: none;
+    color: #ffed89;
+}
+
+#clickUpgrade1-cost-active-mobile,
+#clickUpgrade2-cost-active-mobile,
+#clickUpgrade3-cost-active-mobile,
+#clickUpgrade4-cost-active-mobile,
+#clickUpgrade5-cost-active-mobile,
+#clickUpgrade6-cost-active-mobile,
+#clickUpgrade7-cost-active-mobile {
+    display: none;
+    color: #ffed89;
+}
+
+#clickUpgrade1,
+#clickUpgrade2,
+#clickUpgrade3,
+#clickUpgrade4,
+#clickUpgrade5,
+#clickUpgrade6,
+#clickUpgrade7 {
+    position: relative;
+}
+
+
+/*================================================
+    
+    Tooltip
+    Section
+    
+=================================================*/
+
+.tooltip-box-small {
+    opacity: 0.99;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 250%;
+    width: 310px;
+    background-color: #1D1D1D;
+    border: 1px solid #707070;
+    z-index: 3;
+    position: absolute;
+    left: -130px;
+    top: 53px;
+}
+
+.tooltip-box-small .text {
+    color: white;
+    text-align: left;
+}
+
+#clickUpgrade1-tooltip,
+#clickUpgrade2-tooltip,
+#clickUpgrade3-tooltip,
+#clickUpgrade4-tooltip,
+#clickUpgrade5-tooltip,
+#clickUpgrade6-tooltip,
+#clickUpgrade7-tooltip {
+    display: none;
+}
+
+#clickUpgrade1:hover #clickUpgrade1-tooltip {
+    display: flex;
+}
+
+#clickUpgrade2:hover #clickUpgrade2-tooltip {
+    display: flex;
+}
+
+#clickUpgrade3:hover #clickUpgrade3-tooltip {
+    display: flex;
+}
+
+#clickUpgrade4:hover #clickUpgrade4-tooltip {
+    display: flex;
+}
+
+#clickUpgrade5:hover #clickUpgrade5-tooltip {
+    display: flex;
+}
+
+#clickUpgrade6:hover #clickUpgrade6-tooltip {
+    display: flex;
+}
+
+#clickUpgrade7:hover #clickUpgrade7-tooltip {
+    display: flex;
+}
+
+.tagline-box {
+    background-image: url("../../assets/images/wood.jpg");
+}
+
+.tagline {
+    font-family: 'Marck Script', cursive;
+    font-size: 20px;
+    line-height: 25px;
+    color: #dfdfdf;
+    text-align: center;
+    margin: 5px 10px;
+}
+
+li span {
+    font-size: 11px;
+    color: #88FFB4;
+    margin: 0 5px 0 5px;
+}
+
+.text-swap {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+.tooltip-box {
+    opacity: 0.98;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 10px;
+    height: 230px;
+    width: 98%;
+    background-color: #1D1D1D;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    right: 485px;
+}
+
+#passiveUpgrade1-large {
+    top: 340px;
+    display: none;
+}
+
+#passiveUpgrade2-large {
+    top: 447px;
+    display: none;
+}
+
+#passiveUpgrade3-large {
+    top: 554px;
+    display: none;
+}
+
+#passiveUpgrade4-large {
+    top: 660px;
+    display: none;
+}
+
+#passiveUpgrade5-large {
+    top: 767px;
+    display: none;
+}
+
+
+/* Divider */
+
+.divider {
+    margin-top: 30px;
+    height: 3px;
+    background-color: #1D1D1D;
+}
+
+
+/*================================================
+    
+    Upgrade
+    Section
+    
+=================================================*/
+
+.overlay-upgrades {
+    background-color: black;
+    width: 51px;
+    z-index: 1;
+    height: 50px;
+    opacity: 0.5;
+    position: absolute;
+    margin: -8px;
+    padding: 0;
+}
+
+.overlay-crops {
+    display: none;
+    background-color: black;
+    opacity: 0.5;
+    height: 80px;
+    width: 450px;
+    position: absolute;
+    z-index: 1;
+    margin-left: -26px;
+    padding: 10px 0px;
+}
+
+.scroll {
+    position: static;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#scroll-right {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.scroll-text {
+    color: grey;
+    border: 1px solid grey;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    padding: 5px 10px 5px 10px;
+    letter-spacing: 0px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.passiveUpgrade-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 5px 15px;
+    height: 100px;
+    padding: 0px 25px;
+    background-color: #1d1d1d;
+    border: 1px solid black;
+}
+
+.passiveUpgrade-box:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255, 237, 137, 0.384);
+    box-shadow: 0 0 1px rgb(255, 237, 137);
+}
+
+#passiveUpgrade1-small:hover+#passiveUpgrade1-large {
+    display: flex;
+}
+
+#passiveUpgrade2-small:hover+#passiveUpgrade2-large {
+    display: flex;
+}
+
+#passiveUpgrade3-small:hover+#passiveUpgrade3-large {
+    display: flex;
+}
+
+#passiveUpgrade4-small:hover+#passiveUpgrade4-large {
+    display: flex;
+}
+
+#passiveUpgrade5-small:hover+#passiveUpgrade5-large {
+    display: flex;
+}
+
+.locked {
+    display: none;
+}
+
+.crop-img {
+    min-width: 70px;
+    height: 70px;
+}
+
+.crops-box-middle {
+    margin-left: 15px;
+    margin-top: 0px;
+}
+
+.crops-box-middle-mobile {
+    display: none;
+}
+
+.crops-title {
+    margin: 10px 0px 10px 0px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: white;
+}
+
+.cost {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #88FFB4;
+}
+
+.cost-passiveUpgrade1 {
+    color: #88FFB4;
+}
+
+.counter-crops {
+    margin-left: auto;
+}
+
+.counter-crops {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: #B5B5B5;
+}
+
+
+/*================================================
+    
+    Media Queries
+    Section
+
+=================================================*/
+
+
+/* 1920 x 1080 */
+
+@media (max-width: 1920px) {
+    body {
+        overflow: hidden;
+    }
+    .column {
+        height: 900px;
+    }
+    .profile-img {
+        width: 110px;
+        height: 110px;
+    }
+    .title-box {
+        padding: 20px 0px;
+    }
+    .onion-img {
+        width: 350px;
+        height: 350px;
+    }
+    .counter {
+        font-size: 50px;
+    }
+    .sub-title {
+        font-size: 65px;
+    }
+    .passiveUpgrade-box {
+        height: 90px;
+    }
+    .crop-img {
+        min-width: 60px;
+        height: 60px;
+    }
+    .crops-title {
+        font-size: 15px;
+    }
+    .overlay-crops {
+        height: 70px;
+    }
+    #passiveUpgrade1-large {
+        top: 320px;
+    }
+    #passiveUpgrade2-large {
+        top: 417px;
+    }
+    #passiveUpgrade3-large {
+        top: 514px;
+    }
+    #passiveUpgrade4-large {
+        top: 610px;
+    }
+    #passiveUpgrade5-large {
+        top: 708px;
+    }
+    .tooltip-box {
+        height: 215px;
+    }
+}
+
+
+/* 1366 x 768 */
+
+@media (max-width: 1500px) {
+    body {
+        overflow: hidden;
+    }
+    .game-box {
+        width: 1200px;
+        height: 680px;
+    }
+    .column {
+        height: 680px;
+        width: 400px;
+    }
+    .title-box {
+        padding: 10px 0px;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .middle-top,
+    .right-top {
+        height: 130px;
+    }
+    .profile-img {
+        width: 90px;
+        height: 90px;
+    }
+    p,
+    li {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    li {
+        margin: 1px 0;
+    }
+    li span {
+        font-size: 10px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    .onion-img {
+        width: 250px;
+        height: 250px;
+    }
+    #onion-counter {
+        font-size: 30px;
+    }
+    .counter {
+        font-size: 50px;
+    }
+    .sub-title {
+        font-size: 55px;
+    }
+    .rate {
+        font-size: 12px;
+    }
+    .achievement {
+        width: 350px;
+        height: 100px;
+    }
+    .achievement-box {
+        height: 100%;
+    }
+    #achievement-6,
+    #achievement-9 {
+        height: 100px;
+    }
+    .achievement-title {
+        font-size: 15px;
+    }
+    .achievement-tagline {
+        font-size: 13px;
+    }
+    .upgrade-button {
+        position: relative;
+        margin: 0px;
+        width: 45px;
+        height: 45px;
+    }
+    .upgrade-button img {
+        width: 25px;
+        height: 25px;
+    }
+    .overlay-upgrades {
+        margin: -9px -5px -5px -7px;
+        width: 46px;
+        height: 46px;
+    }
+    .text-box {
+        max-height: 100px;
+    }
+    .passiveUpgrade-box {
+        height: 60px;
+    }
+    .crop-img {
+        min-width: 50px;
+        height: 50px;
+    }
+    .crops-title {
+        font-size: 10px;
+    }
+    .cost {
+        font-size: 8px;
+    }
+    .counter-crops {
+        font-size: 18px;
+    }
+    .overlay-crops {
+        height: 40px;
+        width: 350px;
+    }
+    #passiveUpgrade1-large {
+        top: 252px;
+    }
+    #passiveUpgrade2-large {
+        top: 318px;
+    }
+    #passiveUpgrade3-large {
+        top: 385px;
+    }
+    #passiveUpgrade4-large {
+        top: 452px;
+    }
+    #passiveUpgrade5-large {
+        top: 518px;
+    }
+    .tooltip-box {
+        height: 170px;
+        right: 385px;
+    }
+}
+
+
+/* Tablets */
+
+@media (max-width: 1200px) {
+    body {
+        overflow: hidden;
+    }
+    .game-box {
+        width: 100vw;
+        height: 100vh;
+    }
+    .column {
+        height: 100vh;
+        width: 100vw;
+    }
+    .title {
+        font-size: 20px;
+    }
+    p,
+    li {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+    .onion-img {
+        width: 350px;
+        height: 350px;
+    }
+    #onion-counter {
+        font-size: 35px;
+    }
+    .sub-title {
+        font-size: 65px;
+    }
+    .rate {
+        font-size: 15px;
+    }
+    .achievement {
+        width: 95%;
+        height: 80px;
+    }
+    .achievement-box {
+        height: 100%;
+    }
+    .achievement-title {
+        font-size: 15px;
+    }
+    .achievement-tagline {
+        font-size: 13px;
+    }
+    .scroll {
+        position: relative;
+    }
+    .crops-box-middle-mobile {
+        opacity: 0.8;
+        display: flex;
+    }
+    .passiveUpgrade-container {
+        position: relative;
+    }
+    .passiveUpgrade-box {
+        height: 80px;
+        padding: 0 15px 0 15px;
+    }
+    .crops-title {
+        font-size: 10px;
+    }
+    .crop-img {
+        max-height: 35px;
+        min-width: 35px;
+        margin: 0;
+        padding: 0;
+    }
+    .cost {
+        font-size: 8px;
+    }
+    .counter-crops {
+        font-size: 15px;
+    }
+    .overlay-crops {
+        opacity: 0;
+    }
+    .tooltip-box {
+        display: none;
+    }
+    #passiveUpgrade1-small:hover+#passiveUpgrade1-large {
+        display: none;
+    }
+    #passiveUpgrade2-small:hover+#passiveUpgrade2-large {
+        display: none;
+    }
+    #passiveUpgrade3-small:hover+#passiveUpgrade3-large {
+        display: none;
+    }
+    #passiveUpgrade4-small:hover+#passiveUpgrade4-large {
+        display: none;
+    }
+    #passiveUpgrade5-small:hover+#passiveUpgrade5-large {
+        display: none;
+    }
+    .right-top {
+        min-height: 600px;
+    }
+    .tooltip-box-small-mobile h4 {
+        margin: 0px 0px 10px 40px;
+        line-height: 0;
+        font-size: 10px;
+    }
+    .tooltip-box-small-mobile {
+        display: block;
+        margin: -50px 0px 0px 30px;
+        padding-top: 0px;
+    }
+    .tooltip-box-small-mobile ul {
+        opacity: 0.85;
+        list-style: none;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+    .tooltip-box-small-mobile ul li {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .tooltip-box-small-mobile ul li span {
+        font-size: 12px;
+    }
+    #scroll-right {
+        display: flex;
+    }
+    .clickUpgrade-box {
+        height: 550px;
+        margin-left: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    #clickUpgrade1:hover #clickUpgrade1-tooltip {
+        display: none;
+    }
+    #clickUpgrade2:hover #clickUpgrade2-tooltip {
+        display: none;
+    }
+    #clickUpgrade3:hover #clickUpgrade3-tooltip {
+        display: none;
+    }
+    #clickUpgrade4:hover #clickUpgrade4-tooltip {
+        display: none;
+    }
+    #clickUpgrade5:hover #clickUpgrade5-tooltip {
+        display: none;
+    }
+    #clickUpgrade6:hover #clickUpgrade6-tooltip {
+        display: none;
+    }
+    #clickUpgrade7:hover #clickUpgrade7-tooltip {
+        display: none;
+    }
+    #clickUpgrade1-value-mobile,
+    #clickUpgrade2-value-mobile,
+    #clickUpgrade3-value-mobile,
+    #clickUpgrade4-value-mobile,
+    #clickUpgrade5-value-mobile,
+    #clickUpgrade6-value-mobile,
+    #clickUpgrade7-value-mobile {
+        font-size: 9px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+    body {
+        background-image: none;
+        overflow: hidden;
+    }
+    .background {
+        height: 100vh;
+    }
+    .game-box {
+        margin: 0 auto;
+        position: relative;
+    }
+    .column {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+    }
+    .title {
+        font-size: 20px;
+    }
+    p,
+    li {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    .left {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .middle {
+        z-index: 0;
+        position: absolute;
+    }
+    .right {
+        z-index: 0;
+        position: absolute;
+    }
+    .mobile-nav {
+        z-index: 5;
+        position: sticky;
+        min-height: 80px;
+        width: 100vw;
+        background-color: black;
+        border-top: 3px solid rgba(255, 255, 255, 0.486);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .arrow-left,
+    .arrow-right {
+        background-color: transparent;
+        border: 0;
+        width: 70px;
+        outline: none;
+        color: white;
+        font-size: 30px;
+    }
+    .arrow-left:hover,
+    .arrow-right:hover {
+        cursor: pointer;
+    }
+    #greeting {
+        margin-top: 0;
+        font-size: 20px;
+    }
+    .profile-img {
+        margin: 15px 0px 0px 15px;
+    }
+    .onion {
+        height: 250px;
+    }
+    .onion-img {
+        width: 250px;
+        height: 250px;
+    }
+    #onion-counter {
+        font-size: 35px;
+    }
+    .sub-title {
+        font-size: 65px;
+    }
+    .rate {
+        font-size: 15px;
+    }
+    .achievement {
+        max-width: 85%;
+        height: 80px;
+    }
+    .achievement-box {
+        height: 100%;
+    }
+    .achievement-title {
+        font-size: 15px;
+    }
+    .achievement-tagline {
+        font-size: 13px;
+    }
+    .upgrade-button {
+        margin: 1px;
+    }
+    .crops-box-middle-mobile {
+        opacity: 0.8;
+        display: flex;
+    }
+    .passiveUpgrade-container {
+        position: relative;
+    }
+    .passiveUpgrade-box {
+        height: 80px;
+    }
+    .crops-title {
+        font-size: 12px;
+    }
+    .cost {
+        font-size: 10px;
+    }
+    .counter-crops {
+        font-size: 22px;
+    }
+    .overlay-crops {
+        opacity: 0;
+    }
+}
+
+
+/* Super Small DevicesMobile */
+
+@media (max-width: 360px) {
+    .profile-img {
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+    }
+    #greeting {
+        margin: 0;
+    }
+    #profile-text-box {
+        margin-top: 10px;
+        margin-left: 1px;
+    }
+    .onion-img {
+        margin-top: 10px;
+        height: 220px;
+        width: 220px;
+    }
+    .onion {
+        height: 200px;
+    }
+    #onion-counter {
+        font-size: 30px;
+    }
+    .sub-title {
+        font-size: 50px;
+    }
+    .rate {
+        font-size: 15px;
+    }
+}
+
+
+/* TO DO: =======
+-- Add Icons for Achievements 
+-- Change fonts for p tags, increase font size. 
+-- Create Fixed Size for Howdy, Instructions, and Upgrades Sections
+-- Make Mobile Menu (Each Section will be a new tab on mobile) 
+-- Make all upgrades / tooltips / images hidden by default
+-- Make Achievements visible but descriptions hidden by default
+    -- Make achievement text grey / give overlay by default 
+================ */
